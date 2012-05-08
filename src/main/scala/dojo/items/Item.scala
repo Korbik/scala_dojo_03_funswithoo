@@ -1,5 +1,5 @@
 package dojo.items
 
-abstract class Item {
+abstract class Item(val id:Long) {
 
 }

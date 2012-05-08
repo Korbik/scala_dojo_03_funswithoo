@@ -1,5 +1,5 @@
 package dojo.items
 
-trait Purchasable{
-
+trait Purchasable extends Item{
+	def price :Integer
 }

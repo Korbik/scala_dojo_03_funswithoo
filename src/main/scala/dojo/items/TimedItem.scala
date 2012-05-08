@@ -1,11 +1,18 @@
 package dojo.items
 
 trait TimedItem {
+  private[TimedItem] var startTime: Int = Int.MaxValue
 
-  def ready(now:Int)
+  def ready(now: Int): Boolean = (now - (startTime + delay)) >= 0
 
-  def act(now:Int) : Option[Any]
+  def act(now: Int): Option[Any] = if (ready(now)) { actReady } else { None }
+
+  def startClock(now: Int) {
+    startTime = now
+  }
   
-  def startClock(now:Int)
+  def delay: Int
+
+  protected def actReady: Some[Any]
 
 }

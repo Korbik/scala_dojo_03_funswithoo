@@ -1,5 +1,6 @@
 package dojo.items.house
+import dojo.items.Purchasable
 
-class Chair extends HouseItem {
-
+class Chair(id:Long) extends HouseItem(id) with Purchasable{
+	def price = 3
 }
