@@ -5,7 +5,7 @@ trait TimedItem {
 
   def ready(now: Int): Boolean = (now - (startTime + delay)) >= 0
 
-  def act(now: Int): Option[Any] = if (ready(now)) { actReady } else { None }
+  def act(now: Int): Option[Any] = if (ready(now)) { Some(action) } else { None }
 
   def startClock(now: Int) {
     startTime = now
@@ -13,6 +13,6 @@ trait TimedItem {
   
   def delay: Int
 
-  protected def actReady: Some[Any]
+  protected def action: Any
 
 }

@@ -5,5 +5,5 @@ import dojo.items.TimedItem
 
 class MachineGunUnicorn(id:Long) extends ArtifactItem(id) with TimedItem {
 	def delay = 2
-	def actReady = Some("Bam-Bam")
+	def action = "Bam-Bam"
 }
